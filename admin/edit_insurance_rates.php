@@ -1,6 +1,7 @@
 <?php
 
-require_once __DIR__ . './../database.php';
+// require_once __DIR__ . './../database.php';
+require_once __DIR__ . '/../init.php';
 
 // $age = $_POST;
 // var_dump($age);

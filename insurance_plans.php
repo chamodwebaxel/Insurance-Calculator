@@ -59,6 +59,12 @@ function insurance_cal($day_amount, $insurance, $numberOfDays){
   
   $insurance_deduct = [];
   $insurance_deduct['insurance_name'] = $insurance['name'];
+  $insurance_deduct['benifits'] = $insurance['benifits'];
+  $insurance_deduct['limitations'] = $insurance['limitations'];
+  // var_dump($insurance['benifits']);
+  // exit();
+  //  $insurance['benifits'];
+  //  $insurance['limitations'];
   $insurance_val = array();
 
   if ($insurance['amt_0'] > 0) {
@@ -190,12 +196,9 @@ function insurance_cal($day_amount, $insurance, $numberOfDays){
       <div
         class="container-fluid d-flex align-items-center justify-content-between"
       >
-        <a
-          href="index.html"
-          class="logo d-flex align-items-center scrollto me-auto me-lg-0"
-        >
-          <h1>Insurance<span>.</span></h1>
-        </a>
+      <a href=".">
+            <img src="./image/logo/logo.png" style="width: 100px;height: 50px;" width="1000" height="1000" alt="Tabler" class="navbar-brand-image">
+          </a>
 
         <nav id="navbar" class="navbar m-auto">
           <ul>
@@ -263,8 +266,8 @@ function insurance_cal($day_amount, $insurance, $numberOfDays){
                                         </table>
                                       </td>
                                       
-                                      <td>...</td>
-                                      <td>...</td>
+                                      <td><?= $insurance_deduct['benifits'] ?> </td>
+                                      <td><?= $insurance_deduct['limitations'] ?> </td>
                                     </tr>
                                   <?php endforeach; ?>
                                 </tbody>

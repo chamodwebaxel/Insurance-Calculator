@@ -32,7 +32,7 @@
         </button>
         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
           <a href=".">
-            <img src="./static/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image">
+            <img src="./../image/logo/logo.png" style="width: 100px;height: 50px;" width="1000" height="1000" alt="Tabler" class="navbar-brand-image">
           </a>
         </h1>
         <div class="navbar-nav flex-row order-md-last">
@@ -107,16 +107,16 @@
               <span class="avatar avatar-sm" style="background-image: url(./static/avatars/000m.jpg)"></span>
               <div class="d-none d-xl-block ps-2">
                 <div>Paweł Kuna</div>
-                <div class="mt-1 small text-muted">UI Designer</div>
+                <div class="mt-1 small text-muted">Manager</div>
               </div>
             </a>
             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-              <a href="#" class="dropdown-item">Set status</a>
+              <!-- <a href="#" class="dropdown-item">Set status</a>
               <a href="#" class="dropdown-item">Profile & account</a>
               <a href="#" class="dropdown-item">Feedback</a>
               <div class="dropdown-divider"></div>
-              <a href="#" class="dropdown-item">Settings</a>
-              <a href="#" class="dropdown-item">Logout</a>
+              <a href="#" class="dropdown-item">Settings</a> -->
+              <a href="./logout.php" class="dropdown-item">Logout</a>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@
           <div class="container-xl">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="./index.html">
+                <a class="nav-link" href="./index.php">
                   <span
                     class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24"

@@ -58,9 +58,9 @@
   <header id="header" class="header fixed-top" data-scrollto-offset="0">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
-        <h1>Insurance<span>.</span></h1>
-      </a>
+          <a href=".">
+            <img src="./image/logo/logo.png" style="width: 100px;height: 50px;" width="1000" height="1000" alt="Tabler" class="navbar-brand-image">
+          </a>
 
       <nav id="navbar" class="navbar m-auto">
         <ul>

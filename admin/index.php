@@ -1,6 +1,12 @@
 <?php
 
-require_once __DIR__ . './../database.php';
+// require_once __DIR__ . './../database.php';
+require_once __DIR__ . '/../init.php';
+
+if (!isset($_SESSION['username'])) {
+  header("Location: login.php?msg=You have to login");
+}
+
 
 // $age = $_POST['age'];
 // $benifit = $_POST['benifit'];

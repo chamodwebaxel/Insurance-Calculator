@@ -240,7 +240,7 @@ function insurance_cal($day_amount, $insurance, $numberOfDays){
                                       <th>Limitations</th>
                                   </tr>
                                 </thead>
-                                <tbody>
+                                <tbody>  
                                   <?php foreach ($rates_data as $insurance_deduct): ?>
                                     <tr>
                                       <td>

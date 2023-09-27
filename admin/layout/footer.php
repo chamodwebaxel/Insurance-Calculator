@@ -1,4 +1,10 @@
-<footer class="footer footer-transparent d-print-none">
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<footer class="footer footer-transparent d-print-none" hidden>
         <div class="container-xl">
           <div class="row text-center align-items-center flex-row-reverse">
             <div class="col-lg-auto ms-lg-auto">

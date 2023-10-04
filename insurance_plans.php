@@ -2,11 +2,11 @@
 
 require_once __DIR__ . '/database.php';
 
-$age = $_POST['age'];
-$benifit = $_POST['benifit'];
-$start_date = $_POST['start_date'];
-$end_date = $_POST['end_date'];
-$is_pre_condition = $_POST['is_pre_condition'];
+$age = $_GET['age'];
+$benifit = $_GET['benifit'];
+$start_date = $_GET['start_date'];
+$end_date = $_GET['end_date'];
+$is_pre_condition = $_GET['is_pre_condition'];
 
 $date1 = new DateTime($start_date);
 $date2 = new DateTime($end_date);
@@ -191,88 +191,106 @@ function insurance_cal($day_amount, $insurance, $numberOfDays){
   </head>
 
   <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top" data-scrollto-offset="0">
-      <div
-        class="container-fluid d-flex align-items-center justify-content-between"
-      >
-      <a href=".">
-            <img src="./image/logo/logo.png" style="width: 100px;height: 50px;" width="1000" height="1000" alt="Tabler" class="navbar-brand-image">
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top" data-scrollto-offset="0">
+      <div class="container d-flex align-items-center justify-content-between">
+
+          <a href="./" class="logo d-flex align-items-center scrollto me-auto me-lg-0">
+              <!-- Uncomment the line below if you also wish to use an image logo -->
+              <!-- <img src="assets/img/logo.png" alt=""> -->
+              <h1>YourLogo<span>.</span></h1>
           </a>
 
-        <nav id="navbar" class="navbar m-auto">
-          <ul>
-            <li>
-              <a class="nav-link scrollto" href="index.php"><span>Home</span></a>
-            </li>
-          </ul>
-        </nav>
+          <nav id="navbar" class="navbar">
+              <ul>
+
+
+                  <li><a class="nav-link scrollto" href="./">Home</a></li>
+                  <li><a class="nav-link scrollto" href="./">About</a></li>
+                  <li><a class="nav-link scrollto" href="./">Contact</a></li>
+
+              </ul>
+              <i class="bi bi-list mobile-nav-toggle d-none"></i>
+          </nav><!-- .navbar -->
+
+          <a class="btn-getstarted scrollto" href="./">
+              Free Quotes
+          </a>
+
       </div>
-    </header>
-    <!-- End Header -->
+  </header>
+  <!-- End Header -->
 
     <main id="main">
-      <section id="blog" class="blog">
+
+        <section id="hero-static" class="hero-static d-flex align-items-center pb-3">
+            <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative aos-init aos-animate" data-aos="zoom-out">
+                <h2>FREE <span>Quotes</span></h2>
+                <p class="mb-0">Et voluptate esse accusantium accusamus natus reiciendis quidem voluptates similique aut.</p>
+            </div>
+        </section>
+
+
+
+        <section id="blog" class="blog">
         <div class="container" data-aos="fade-up">
           <div class="row g-5 justify-content-center align-items-center">
             <div class="col-lg-12">
-                <div class="comments">
-                    <div class="card">
-                        <div class="row mb-3 mt-3" style="padding: 15px">
-                          <div class="col-md-6">
-                            Age :
+                <div class="card ins-top">
+                    <div class="d-flex justify-content-between " style="padding: 15px">
+                        <div class="">
+                            <b>Age :</b>
                             <?= $age ?>
-                          </div>
-                          <div class="col-md-3">
-                            Benefit :
+                        </div>
+                        <div class="">
+                            <b>Benefit :</b>
                             $<?= $benifit ?>
-                          </div>
-                          <div class="col-md-3">
-                            Period :
+                        </div>
+                        <div class="">
+                            <b>Period :</b>
                             <?= $numberOfDays ?>
-                          </div>
                         </div>
                     </div>
-                    <div class="card mt-1">
-                        <div class="table-responsive">
-                            <table class="table table-vcenter card-table text-center">
-                                <thead>
-                                  <tr>
-                                      <th>Insurance</th>
-                                      <th>Benifit</th>
-                                      <th>Limitations</th>
-                                  </tr>
-                                </thead>
-                                <tbody>  
-                                  <?php foreach ($rates_data as $insurance_deduct): ?>
-                                    <tr>
-                                      <td>
-                                        <?php echo $insurance_deduct['insurance_name']; ?>
-                                        <table class="table table-vcenter card-table w-50 ">
-                                          <thead>
+                </div>
+                <div class="card mt-1">
+                    <div class="table-responsive">
+                        <table class="table table-vcenter card-table table-bordered ins-tbl">
+                            <thead>
+                            <tr>
+                                <th>Insurance</th>
+                                <th>Benifit</th>
+                                <th>Limitations</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($rates_data as $insurance_deduct): ?>
+                                <tr>
+                                    <td class="text-center">
+                                        <span class="ins-name"><?php echo $insurance_deduct['insurance_name']; ?></span>
+                                        <table class="table table-vcenter table-striped card-table w-50 sub-tbl">
+                                            <thead>
                                             <tr>
                                                 <th>Premium</th>
                                                 <th>Deductible</th>
                                             </tr>
-                                          </thead>
-                                          <tbody>
-                                              <?php foreach ($insurance_deduct['insurance_val'] as $key => $value): ?>
-                                              <tr>
-                                                <td><?php echo "$$value"; ?></td>
-                                                <td><?php echo "$$key"; ?></td>
-                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                            <?php foreach ($insurance_deduct['insurance_val'] as $key => $value): ?>
+                                                <tr>
+                                                    <td><?php echo "$$value"; ?></td>
+                                                    <td><?php echo "$$key"; ?></td>
+                                                </tr>
                                             <?php endforeach; ?>
-                                          </tbody>
+                                            </tbody>
                                         </table>
-                                      </td>
-                                      
-                                      <td><?= $insurance_deduct['benifits'] ?> </td>
-                                      <td><?= $insurance_deduct['limitations'] ?> </td>
-                                    </tr>
-                                  <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
+                                    </td>
+
+                                    <td><?= $insurance_deduct['benifits'] ?> </td>
+                                    <td><?= $insurance_deduct['limitations'] ?> </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
